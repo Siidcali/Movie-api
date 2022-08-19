@@ -13,6 +13,9 @@ let Movie = db.define('movie', {
     },
     runtime: {
         type: DataTypes.INTEGER
+    },
+    genre:{
+        type: DataTypes.STRING
     }
 })
 

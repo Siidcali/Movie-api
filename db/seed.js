@@ -1,7 +1,7 @@
 const movieList = [
-    {name:"interstellar", runtime:169 },
-    {name:"The Shawshank Redemption", runtime:144 },
-    {name:"The dark night", runtime:162 }
+    {name:"interstellar", runtime:169, genre: "sci-fi" },
+    {name:"The Shawshank Redemption", runtime:144, genre: "crime"},
+    {name:"The dark night", runtime:162, genre: "thriller" }
 ]
 
 
