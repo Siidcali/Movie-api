@@ -8,7 +8,11 @@ let Review = db.define('review', {
     },
     rating: {
         type: DataTypes.FLOAT
-    }
+    },
+    userRating:{
+        type: DataTypes.INTEGER
+        }
+    
 })
 
 

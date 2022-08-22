@@ -1,6 +1,6 @@
 const {db} = require('./db')
-const {userList, movieList} = require('./seed')
-const {User, Movie} = require('../models')
+const {userList, movieList,reviewList} = require('./seed')
+const {User, Movie, Review} = require('../models')
 
 
 let populateDataBase = async () => {
@@ -8,6 +8,8 @@ let populateDataBase = async () => {
 
     await Promise.all(userList.map((u)=> User.create(u)))
     await Promise.all(movieList.map((m) => {Movie.create(m)}))
+    await Promise.all(reviewList.map((u)=> Review.create(u)))
+
 
     const user = await User.findByPk(1)
     const movies = await Movie.findAll()

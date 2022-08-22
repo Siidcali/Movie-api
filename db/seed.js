@@ -11,6 +11,12 @@ const userList = [
     {name: "Profesor", email: "2Moves@email.com"},
     {name:"bob", email:"pick&hammer@email.com"}
 ]
+const reviewList = [
+    {userRating:7},
+    {userRating:5},
+    {userRating:8}
+]
 
 
-module.exports = {movieList, userList}
+
+module.exports = {movieList, userList,reviewList}
