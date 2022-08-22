@@ -3,14 +3,14 @@ const {DataTypes} = require('sequelize')
 
 
 let Review = db.define('review', {
+    name:{
+        type:DataTypes.STRING
+    },
     watch: {
         type: DataTypes.BOOLEAN
     },
-    rating: {
-        type: DataTypes.FLOAT
-    },
     userRating:{
-        type: DataTypes.INTEGER
+        type: DataTypes.FLOAT
         }
     
 })

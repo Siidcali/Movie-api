@@ -1,5 +1,5 @@
 const express = require('express')
-const { Movie } = require('../models')
+const { Movie,Review } = require('../models')
 const moviesRt = express.Router()
 
  moviesRt.get('/',async(req,res)=>{
@@ -22,6 +22,25 @@ const moviesRt = express.Router()
     const movie = await Movie.findOne({where:{name:req.params.movie}})
     res.json(movie)
  })
+
+ moviesRt.get('/:movie/rating',async(req,res)=>{
+   const rating = await Review.findOne({where:{name:req.params.movie}})
+   res.json(rating.userRating)
+})
+moviesRt.put('/:change',async(req,res)=>{
+   const rating = await Movie.findOne({where:{name:req.params.change}})
+   const {name, runtime, genre} = req.query
+   rating.set({
+       name: name || rating.name,
+       runtime: runtime || rating.runtime,
+       genre: genre || rating.genre,
+   })
+   await rating.save()
+   inventory=Movie.findAll()
+   res.json(rating)
+})
+
+
 
 moviesRt.delete('/:movie',async(req,res)=>{
    const store=await Movie.destroy({where:{name:req.params.movie}})
